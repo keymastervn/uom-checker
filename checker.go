@@ -16,7 +16,7 @@ type Attr struct {
 	Desc string `xml:"desc"`
 }
 
-var ul *UomList
+var UL *UomList
 
 // Prefetch UOM List
 func init() {
@@ -29,16 +29,21 @@ func init() {
 
 	b, _ := ioutil.ReadAll(xmlFile)
 
-	xml.Unmarshal(b, &ul)
+	xml.Unmarshal(b, &UL)
 }
 
-// Check whether uomID is an UOM Code
+// IsUOM checks whether uomID is an UOM Code
 func IsUOM(uomID string) bool {
-	for _, uom := range ul.UOM {
+	for _, uom := range UL.UOM {
 		if uomID == uom.Code {
 			return true
 		}
 	}
 
 	return false
+}
+
+// main
+func main() {
+	// Do nothing
 }

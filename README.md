@@ -8,12 +8,12 @@ Installation
 
 Just use go get.
 
-  go get github.com/keymastervn/uom-checker
+  go get github.com/keymastervn/uom_checker
 
 And then just import the package into your own code.
 
   import (
-    "github.com/keymastervn/uom-checker"
+    "github.com/keymastervn/uom_checker"
   )
 
 Usage
