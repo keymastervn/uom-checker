@@ -3,7 +3,7 @@ package uom_checker_test
 import (
 	"fmt"
 	"testing"
-	"uom-checker"
+	"uom_checker"
 )
 
 func TestIsUOM(t *testing.T) {
