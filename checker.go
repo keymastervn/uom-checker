@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"path"
+	"runtime"
 )
 
 type UomList struct {
@@ -20,7 +22,8 @@ var UL *UomList
 
 // Prefetch UOM List
 func init() {
-	xmlFile, err := os.Open("uom.xml")
+	_, filename, _, _ := runtime.Caller(0)
+	xmlFile, err := os.Open(path.Join(path.Dir(filename), "uom.xml"))
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
@@ -39,7 +42,6 @@ func IsUOM(uomID string) bool {
 			return true
 		}
 	}
-
 	return false
 }
 

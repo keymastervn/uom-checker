@@ -2,8 +2,8 @@ package uom_checker_test
 
 import (
 	// "fmt"
-	"testing"
 	"github.com/keymastervn/uom_checker"
+	"testing"
 )
 
 func TestIsUOM(t *testing.T) {
@@ -25,6 +25,10 @@ func TestIsUOM(t *testing.T) {
 	}
 	uomID = "B8"
 	if !uom_checker.IsUOM(uomID) {
+		t.Error("OMG- FAILED")
+	}
+	uomID = "CALIFORNIA"
+	if uom_checker.IsUOM(uomID) {
 		t.Error("OMG- FAILED")
 	}
 }
