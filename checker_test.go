@@ -1,9 +1,9 @@
 package uom_checker_test
 
 import (
-	"fmt"
+	// "fmt"
 	"testing"
-	"uom_checker"
+	"github.com/keymastervn/uom_checker"
 )
 
 func TestIsUOM(t *testing.T) {
