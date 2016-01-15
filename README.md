@@ -8,7 +8,7 @@ Installation
 
 Just use go get.
 
-  go get github.com/keymastervn/uom_checker
+  `go get github.com/keymastervn/uom_checker`
 
 And then just import the package into your own code.
 
