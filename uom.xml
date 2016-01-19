@@ -3122,4 +3122,8 @@
     <code>99</code>
     <desc>Watt</desc>
   </UOM>
+  <UOM>
+    <code>VL</code>
+    <desc>VIAL</desc>
+  </UOM>
 </Data>
