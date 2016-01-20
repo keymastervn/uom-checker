@@ -17,7 +17,7 @@ var uomCodes map[string]struct{}
 // Prefetch UOM List
 func init() {
 	uomCodes = make(map[string]struct{})
-	xml.Unmarshal([]byte(uoms), &UL)
+	xml.Unmarshal([]byte(uomsXML), &UL)
 	for _, uom := range UL.UOM {
 		uomCodes[uom.Code] = struct{}{}
 	}

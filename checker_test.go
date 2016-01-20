@@ -3,7 +3,6 @@ package uom_checker_test
 import (
 	// "fmt"
 
-	"fmt"
 	"testing"
 
 	"github.com/keymastervn/uom_checker"
@@ -18,7 +17,6 @@ func TestIsUOM(t *testing.T) {
 	}
 
 	uomID = "VL"
-	fmt.Println("shit")
 	if !uom_checker.IsUOM(uomID) {
 		t.Error("OMG- FAILED")
 	}
