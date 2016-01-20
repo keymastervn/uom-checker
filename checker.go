@@ -1,13 +1,6 @@
 package uom_checker
 
-import (
-	"encoding/xml"
-	"fmt"
-	"io/ioutil"
-	"os"
-	"path"
-	"runtime"
-)
+import "encoding/xml"
 
 type UomList struct {
 	UOM []Attr `xml:"UOM"`
@@ -19,33 +12,21 @@ type Attr struct {
 }
 
 var UL *UomList
+var uomCodes map[string]struct{}
 
 // Prefetch UOM List
 func init() {
-	_, filename, _, _ := runtime.Caller(0)
-	xmlFile, err := os.Open(path.Join(path.Dir(filename), "uom.xml"))
-	if err != nil {
-		fmt.Println("Error opening file:", err)
-		return
+	uomCodes = make(map[string]struct{})
+	xml.Unmarshal([]byte(uoms), &UL)
+	for _, uom := range UL.UOM {
+		uomCodes[uom.Code] = struct{}{}
 	}
-	defer xmlFile.Close()
-
-	b, _ := ioutil.ReadAll(xmlFile)
-
-	xml.Unmarshal(b, &UL)
 }
 
-// IsUOM checks whether uomID is an UOM Code
-func IsUOM(uomID string) bool {
-	for _, uom := range UL.UOM {
-		if uomID == uom.Code {
-			return true
-		}
+// IsUOM checks whether uomCode is an UOM Code
+func IsUOM(uomCode string) bool {
+	if _, ok := uomCodes[uomCode]; ok {
+		return true
 	}
 	return false
-}
-
-// main
-func main() {
-	// Do nothing
 }

@@ -1,5 +1,12 @@
+package uom_checker
+
+const uomsXML = `
 <?xml version="1.0" encoding="UTF-8" ?>
 <Data>
+    <UOM>
+    <code>VL</code>
+    <desc>VIAL</desc>
+  </UOM>
   <UOM>
     <code>AA</code>
     <desc>Ball</desc>
@@ -3122,8 +3129,5 @@
     <code>99</code>
     <desc>Watt</desc>
   </UOM>
-  <UOM>
-    <code>VL</code>
-    <desc>VIAL</desc>
-  </UOM>
 </Data>
+`
