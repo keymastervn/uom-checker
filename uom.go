@@ -3,7 +3,11 @@ package uom_checker
 const uomsXML = `
 <?xml version="1.0" encoding="UTF-8" ?>
 <Data>
-    <UOM>
+  <UOM>
+    <code>DI</code>
+    <desc>DISPENSER</desc>
+  </UOM>
+  <UOM>
     <code>VL</code>
     <desc>VIAL</desc>
   </UOM>
